@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4C2682A29E7A5D900E3E6ED /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C2682929E7A5D900E3E6ED /* VisualEffectBlur.swift */; };
+		F4C2682C29E7A66D00E3E6ED /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C2682B29E7A66D00E3E6ED /* ImagePicker.swift */; };
 		F4EB71D029E798DC004F39B1 /* SwiftUI__AdvancedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EB71CF29E798DC004F39B1 /* SwiftUI__AdvancedApp.swift */; };
 		F4EB71D229E798DC004F39B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EB71D129E798DC004F39B1 /* ContentView.swift */; };
 		F4EB71D429E798DD004F39B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EB71D329E798DD004F39B1 /* Assets.xcassets */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F4C2682929E7A5D900E3E6ED /* VisualEffectBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
+		F4C2682B29E7A66D00E3E6ED /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F4EB71CC29E798DC004F39B1 /* SwiftUI  Advanced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI  Advanced.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EB71CF29E798DC004F39B1 /* SwiftUI__AdvancedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI__AdvancedApp.swift; sourceTree = "<group>"; };
 		F4EB71D129E798DC004F39B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +60,8 @@
 		F4EB71CE29E798DC004F39B1 /* SwiftUI  Advanced */ = {
 			isa = PBXGroup;
 			children = (
+				F4C2682929E7A5D900E3E6ED /* VisualEffectBlur.swift */,
+				F4C2682B29E7A66D00E3E6ED /* ImagePicker.swift */,
 				F4EB71CF29E798DC004F39B1 /* SwiftUI__AdvancedApp.swift */,
 				F4EB71D129E798DC004F39B1 /* ContentView.swift */,
 				F4EB71D329E798DD004F39B1 /* Assets.xcassets */,
@@ -145,8 +151,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4C2682A29E7A5D900E3E6ED /* VisualEffectBlur.swift in Sources */,
 				F4EB71D929E798DD004F39B1 /* Persistence.swift in Sources */,
 				F4EB71DC29E798DD004F39B1 /* SwiftUI__Advanced.xcdatamodeld in Sources */,
+				F4C2682C29E7A66D00E3E6ED /* ImagePicker.swift in Sources */,
 				F4EB71D229E798DC004F39B1 /* ContentView.swift in Sources */,
 				F4EB71D029E798DC004F39B1 /* SwiftUI__AdvancedApp.swift in Sources */,
 			);
