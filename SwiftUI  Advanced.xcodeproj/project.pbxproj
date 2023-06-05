@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F4C2682A29E7A5D900E3E6ED /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C2682929E7A5D900E3E6ED /* VisualEffectBlur.swift */; };
-		F4C2682C29E7A66D00E3E6ED /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C2682B29E7A66D00E3E6ED /* ImagePicker.swift */; };
+		F4B2D4CA29F4A1AD00BD317D /* GradientText.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B2D4C929F4A1AD00BD317D /* GradientText.swift */; };
+		F4B2D4CE29F4A1E300BD317D /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B2D4CD29F4A1E300BD317D /* GradientButton.swift */; };
+		F4B2D4D229F4A37200BD317D /* TextfieldIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B2D4D129F4A37200BD317D /* TextfieldIcon.swift */; };
+		F4C2683029E8F7EF00E3E6ED /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C2682E29E8F7EF00E3E6ED /* VisualEffectBlur.swift */; };
+		F4C2683129E8F7EF00E3E6ED /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C2682F29E8F7EF00E3E6ED /* ImagePicker.swift */; };
 		F4EB71D029E798DC004F39B1 /* SwiftUI__AdvancedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EB71CF29E798DC004F39B1 /* SwiftUI__AdvancedApp.swift */; };
 		F4EB71D229E798DC004F39B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4EB71D129E798DC004F39B1 /* ContentView.swift */; };
 		F4EB71D429E798DD004F39B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4EB71D329E798DD004F39B1 /* Assets.xcassets */; };
@@ -18,8 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F4C2682929E7A5D900E3E6ED /* VisualEffectBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
-		F4C2682B29E7A66D00E3E6ED /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		F4B2D4C929F4A1AD00BD317D /* GradientText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientText.swift; sourceTree = "<group>"; };
+		F4B2D4CD29F4A1E300BD317D /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
+		F4B2D4D129F4A37200BD317D /* TextfieldIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextfieldIcon.swift; sourceTree = "<group>"; };
+		F4C2682E29E8F7EF00E3E6ED /* VisualEffectBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
+		F4C2682F29E8F7EF00E3E6ED /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		F4CD73AE2A27AC2800F4CA6E /* MultipartFormdata.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MultipartFormdata.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F4EB71CC29E798DC004F39B1 /* SwiftUI  Advanced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI  Advanced.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4EB71CF29E798DC004F39B1 /* SwiftUI__AdvancedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI__AdvancedApp.swift; sourceTree = "<group>"; };
 		F4EB71D129E798DC004F39B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -41,9 +48,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F4B2D4C829F4A19000BD317D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F4B2D4C929F4A1AD00BD317D /* GradientText.swift */,
+				F4B2D4CD29F4A1E300BD317D /* GradientButton.swift */,
+				F4B2D4D129F4A37200BD317D /* TextfieldIcon.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F4C2682D29E8F7EF00E3E6ED /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F4C2682E29E8F7EF00E3E6ED /* VisualEffectBlur.swift */,
+				F4C2682F29E8F7EF00E3E6ED /* ImagePicker.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		F4EB71C329E798DC004F39B1 = {
 			isa = PBXGroup;
 			children = (
+				F4CD73AE2A27AC2800F4CA6E /* MultipartFormdata.playground */,
 				F4EB71CE29E798DC004F39B1 /* SwiftUI  Advanced */,
 				F4EB71CD29E798DC004F39B1 /* Products */,
 			);
@@ -60,8 +87,8 @@
 		F4EB71CE29E798DC004F39B1 /* SwiftUI  Advanced */ = {
 			isa = PBXGroup;
 			children = (
-				F4C2682929E7A5D900E3E6ED /* VisualEffectBlur.swift */,
-				F4C2682B29E7A66D00E3E6ED /* ImagePicker.swift */,
+				F4B2D4C829F4A19000BD317D /* Views */,
+				F4C2682D29E8F7EF00E3E6ED /* Helpers */,
 				F4EB71CF29E798DC004F39B1 /* SwiftUI__AdvancedApp.swift */,
 				F4EB71D129E798DC004F39B1 /* ContentView.swift */,
 				F4EB71D329E798DD004F39B1 /* Assets.xcassets */,
@@ -151,10 +178,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4C2682A29E7A5D900E3E6ED /* VisualEffectBlur.swift in Sources */,
 				F4EB71D929E798DD004F39B1 /* Persistence.swift in Sources */,
+				F4B2D4CE29F4A1E300BD317D /* GradientButton.swift in Sources */,
 				F4EB71DC29E798DD004F39B1 /* SwiftUI__Advanced.xcdatamodeld in Sources */,
-				F4C2682C29E7A66D00E3E6ED /* ImagePicker.swift in Sources */,
+				F4B2D4D229F4A37200BD317D /* TextfieldIcon.swift in Sources */,
+				F4B2D4CA29F4A1AD00BD317D /* GradientText.swift in Sources */,
+				F4C2683129E8F7EF00E3E6ED /* ImagePicker.swift in Sources */,
+				F4C2683029E8F7EF00E3E6ED /* VisualEffectBlur.swift in Sources */,
 				F4EB71D229E798DC004F39B1 /* ContentView.swift in Sources */,
 				F4EB71D029E798DC004F39B1 /* SwiftUI__AdvancedApp.swift in Sources */,
 			);
