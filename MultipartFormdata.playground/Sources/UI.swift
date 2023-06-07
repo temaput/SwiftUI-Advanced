@@ -25,6 +25,9 @@ func testHttpFormSubmit(formValues: FormValues) async {
   formData.append(name: "username", value: formValues.username)
   formData.append(name: "password", value: formValues.password)
   formData.append(name: "rank", value: formValues.rank)
+  if let avatar = formValues.avatar {
+    formData.append(name: "avatar", value: avatar)
+  }
   do {
     guard let url = URL(string: "https://httpbin.org/post") else { return }
     let request = formData.asHttpRequest(url: url)
