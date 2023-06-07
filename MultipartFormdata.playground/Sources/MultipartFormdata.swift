@@ -1,7 +1,7 @@
 import Foundation
 import UniformTypeIdentifiers
 
-public func getMimeTypeFromURL(_ fileURL: URL) -> String? {
+func getMimeTypeFromURL(_ fileURL: URL) -> String? {
   do {
     let resourceValues = try fileURL.resourceValues(forKeys: [.contentTypeKey, .isDirectoryKey])
     if resourceValues.isDirectory ?? false {
@@ -20,7 +20,7 @@ public func getMimeTypeFromURL(_ fileURL: URL) -> String? {
 
 
 
-public class FormData {
+class FormData {
   
   struct FormDataItem {
     var name: String
@@ -111,6 +111,12 @@ public class FormData {
   
   private var data: Array<FormDataItem> = []
   
+  private var boundary: String
+  
+  init() {
+    boundary = "Boundary-\(UUID().uuidString)"
+  }
+  
   
   func append(name: String, value: CustomStringConvertible) {
     if let value = "\(value)".data(using: .utf8) {
@@ -174,6 +180,42 @@ public class FormData {
   }
   
   
+  var bodyForHttpRequest: Data {
+    
+    var body = Data()
+
+    data.forEach { formDataItem in
+      body.append("--\(boundary)\r\n".data(using: .utf8)!)
+      if let fileName = formDataItem.filename, let mime = formDataItem.mime {
+        body.append("Content-Disposition: form-data; name=\"\(formDataItem.name)\"; filename=\"\(fileName)\"\r\n".data(using: .utf8)!)
+        body.append("Content-Type: \(mime)\r\n\r\n".data(using: .utf8)!)
+      } else {
+        body.append("Content-Disposition: form-data; name=\"\(formDataItem.name)\"\r\n\r\n".data(using: .utf8)!)
+      }
+      body.append(formDataItem.value)
+      body.append("\r\n".data(using: .utf8)!)
+      
+      
+    }
+    body.append("--\(boundary)--\r\n".data(using: .utf8)!)
+    
+    return body
+    
+    
+  }
+  
+  var contentTypeForHttpRequest: String {
+    return "multipart/form-data; boundary=\(boundary)"
+  }
+  
+  
+  func asHttpRequest(url: URL) -> URLRequest {
+    var request = URLRequest(url: url)
+    request.httpMethod = "POST"
+    request.httpBody = bodyForHttpRequest
+    request.setValue(contentTypeForHttpRequest, forHTTPHeaderField: "Content-Type")
+    return request
+  }
   
   
 }
