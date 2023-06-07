@@ -9,14 +9,10 @@ import UniformTypeIdentifiers
 
 struct FormValues {
   
-  init() {
-    self.username = ""
-    self.password = ""
-    self.rank = 0
-  }
-  var username: String
-  var password: String
-  var rank: Int
+  var username: String = ""
+  var password: String = ""
+  var rank: Int = 0
+  var active: Bool = false
   var avatar: URL?
 }
 
@@ -25,6 +21,7 @@ func testHttpFormSubmit(formValues: FormValues) async {
   formData.append(name: "username", value: formValues.username)
   formData.append(name: "password", value: formValues.password)
   formData.append(name: "rank", value: formValues.rank)
+  formData.append(name: "active", value: formValues.active)
   if let avatar = formValues.avatar {
     formData.append(name: "avatar", value: avatar)
   }
@@ -114,6 +111,7 @@ struct ContentView: View {
         
         
         Stepper("User rank: \(formValues.rank)", value: $formValues.rank).padding()
+        Toggle("User is active", isOn: $formValues.active).padding()
         LabeledContent("User avatar") {
           Button("Pick Avatar") {
             openFolderOrFile {

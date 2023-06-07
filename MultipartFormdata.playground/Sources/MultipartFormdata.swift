@@ -119,17 +119,15 @@ class FormData {
   
   
   func append(name: String, value: CustomStringConvertible) {
-    if let value = "\(value)".data(using: .utf8) {
+    
+    if let value = "\(value)".data(using: .utf8), let name = name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
       data.append(FormDataItem(name: name, value: value))
     }
   }
   
-  func append(name: String, value: Bool) {
-    
-  }
   
   func append(name: String, value: URL) {
-    if let fileData = try? Data(contentsOf: value), let mime = getMimeTypeFromURL(value) {
+    if let fileData = try? Data(contentsOf: value), let mime = getMimeTypeFromURL(value), let name = name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
       data.append(FormDataItem(name: name, value: fileData, filename: value.lastPathComponent, mime: mime))
     }
   }
