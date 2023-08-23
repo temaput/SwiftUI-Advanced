@@ -6,8 +6,10 @@ import PlaygroundSupport
 import UniformTypeIdentifiers
 
 
+//let apiURL = "https://httpbin.org/post"
+let apiURL = "http://127.0.0.1:8000/form_data/flat-form-raw/"
 
-struct FormValues {
+struct FormValues: Encodable {
   
   var username: String = ""
   var password: String = ""
@@ -25,9 +27,33 @@ func testHttpFormSubmit(formValues: FormValues) async {
   if let avatar = formValues.avatar {
     formData.append(name: "avatar", value: avatar)
   }
+  await submitFormData(formData: formData)
+}
+
+func testEncodedFormSubmit(formValues: FormValues) async {
+  let encoder = MFEncoder()
+  if let data = try? encoder.encode(formValues), let contentTypeForHttpRequest = encoder.contentTypeForHttpRequest {
+    
+    guard let url = URL(string: apiURL) else { return }
+    var request = URLRequest(url: url)
+    request.httpMethod = "POST"
+    request.httpBody = data
+    request.setValue(contentTypeForHttpRequest, forHTTPHeaderField: "Content-Type")
+    await submitHttpRequest(request)
+    
+  }
+      
+      
+}
+
+func submitFormData(formData: FormData)  async {
+  guard let url = URL(string: apiURL) else { return }
+  let request = formData.asHttpRequest(url: url)
+  await submitHttpRequest(request)
+}
+
+func submitHttpRequest(_ request: URLRequest) async {
   do {
-    guard let url = URL(string: "https://httpbin.org/post") else { return }
-    let request = formData.asHttpRequest(url: url)
     print("Sending request...")
     let (data, response) = try await URLSession.shared.data(for: request)
     // Handle data and response.
@@ -127,7 +153,7 @@ struct ContentView: View {
       Button("Submit Form") {
         print("Submitting \(formValues)")
         Task {
-          await testHttpFormSubmit(formValues:formValues)
+          await testEncodedFormSubmit(formValues:formValues)
         }
       }.padding()
       
@@ -142,5 +168,6 @@ struct ContentView: View {
 
 public func testThis() {
   
-  PlaygroundPage.current.setLiveView(ContentView())
+    PlaygroundPage.current.setLiveView(ContentView())
+  
 }
